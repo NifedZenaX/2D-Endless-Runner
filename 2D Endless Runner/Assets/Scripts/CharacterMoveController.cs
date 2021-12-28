@@ -20,9 +20,12 @@ public class CharacterMoveController : MonoBehaviour
     private bool isJumping;
     private bool isOnGround;
 
+    private Animator anim;
+
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -34,6 +37,8 @@ public class CharacterMoveController : MonoBehaviour
                 isJumping = true;
             }
         }
+
+        anim.SetBool("isOnGround", isOnGround);
     }
 
     private void FixedUpdate()
