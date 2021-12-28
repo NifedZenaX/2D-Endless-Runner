@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 566376793}
   - component: {fileID: 566376792}
   - component: {fileID: 566376794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 569199757}
   - component: {fileID: 569199756}
   - component: {fileID: 569199758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,6 +603,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveAccel: 2
   maxSpeed: 4
+  jumpAccel: 5
+  groundRaycastDistance: 1
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &870140404
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +619,7 @@ GameObject:
   - component: {fileID: 870140406}
   - component: {fileID: 870140405}
   - component: {fileID: 870140407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +728,7 @@ GameObject:
   - component: {fileID: 898445885}
   - component: {fileID: 898445884}
   - component: {fileID: 898445886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +837,7 @@ GameObject:
   - component: {fileID: 929196254}
   - component: {fileID: 929196253}
   - component: {fileID: 929196255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +946,7 @@ GameObject:
   - component: {fileID: 1131508515}
   - component: {fileID: 1131508514}
   - component: {fileID: 1131508516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1050,7 +1055,7 @@ GameObject:
   - component: {fileID: 1825627862}
   - component: {fileID: 1825627861}
   - component: {fileID: 1825627863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1164,7 @@ GameObject:
   - component: {fileID: 2021408092}
   - component: {fileID: 2021408091}
   - component: {fileID: 2021408093}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1273,7 @@ GameObject:
   - component: {fileID: 2140107846}
   - component: {fileID: 2140107845}
   - component: {fileID: 2140107847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
