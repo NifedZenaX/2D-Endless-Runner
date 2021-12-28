@@ -8,11 +8,28 @@ public class CharacterMoveController : MonoBehaviour
     public float moveAccel;
     public float maxSpeed;
 
+    [Header("Jump")]
+    public float jumpAccel;
+
     private Rigidbody2D rig;
+
+    private bool isJumping;
+    private bool isOnGround;
 
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (isOnGround)
+            {
+                isJumping = true;
+            }
+        }
     }
 
     private void FixedUpdate()
