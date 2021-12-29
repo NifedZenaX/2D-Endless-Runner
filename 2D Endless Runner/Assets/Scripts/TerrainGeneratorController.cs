@@ -23,8 +23,11 @@ public class TerrainGeneratorController : MonoBehaviour
     private float lastGeneratedPositionX;
     private float lastRemovedPositionX;
 
+    private Dictionary<string, List<GameObject>> pool;
+
     private void Start()
     {
+        pool = new Dictionary<string, List<GameObject>>();
         spawnedTerrain = new List<GameObject>();
         lastGeneratedPositionX = GetHorizontalPositionStart();
         lastRemovedPositionX = lastGeneratedPositionX - terrainTemplateWidth;
@@ -53,6 +56,37 @@ public class TerrainGeneratorController : MonoBehaviour
             lastRemovedPositionX += terrainTemplateWidth;
             RemoveTerrain(lastRemovedPositionX);
         }
+    }
+
+    private GameObject GenerateFromPool(GameObject item, Transform parent)
+    {
+        if (pool.ContainsKey(item.name))
+        {
+            if(pool[item.name].Count > 0)
+            {
+                GameObject newItemFromPool = pool[item.name][0];
+                pool[item.name].Remove(newItemFromPool);
+                newItemFromPool.SetActive(true);
+                return newItemFromPool;
+            }
+        }
+        else
+        {
+            pool.Add(item.name, new List<GameObject>());
+        }
+        GameObject newItem = Instantiate(item, parent);
+        newItem.name = item.name;
+        return newItem;
+    }
+
+    private void ReturnToPool(GameObject item)
+    {
+        if (!pool.ContainsKey(item.name))
+        {
+            Debug.LogError("INVALID POOL ITEM!!");
+        }
+        pool[item.name].Add(item);
+        item.SetActive(false);
     }
 
     private void GenerateTerrain(float posX, TerrainTemplateController forceterrain = null)
