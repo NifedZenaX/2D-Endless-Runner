@@ -653,6 +653,8 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  score: {fileID: 1587411451}
+  scoringRatio: 2
 --- !u!114 &689314259
 MonoBehaviour:
   m_ObjectHideFlags: 0

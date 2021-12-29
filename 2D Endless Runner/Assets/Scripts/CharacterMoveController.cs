@@ -15,6 +15,11 @@ public class CharacterMoveController : MonoBehaviour
     public float groundRaycastDistance;
     public LayerMask groundLayerMask;
 
+    [Header("Scoring")]
+    public ScoreController score;
+    public float scoringRatio;
+    private float lastPositionX;
+
     private Rigidbody2D rig;
 
     private bool isJumping;
@@ -41,8 +46,14 @@ public class CharacterMoveController : MonoBehaviour
                 sound.PlayJump();
             }
         }
-
         anim.SetBool("isOnGround", isOnGround);
+        int distancePassed = Mathf.FloorToInt(transform.position.x - lastPositionX);
+        int scoreIncrement = Mathf.FloorToInt(distancePassed / scoringRatio);
+        if(scoreIncrement > 0)
+        {
+            score.IncreaseCurrentScore(scoreIncrement);
+            lastPositionX += distancePassed;
+        }
     }
 
     private void FixedUpdate()
