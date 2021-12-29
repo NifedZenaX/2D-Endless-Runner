@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: {fileID: 8300000, guid: 1017ef800c8661244a18cc8a79534ed6, type: 3}
+  scoreHighlight: {fileID: 8300000, guid: 5e1232d881fa0ee47b2c82fa9c1a9e1d, type: 3}
 --- !u!82 &689314260
 AudioSource:
   m_ObjectHideFlags: 0
